@@ -11,6 +11,9 @@
 
 package br.classesprincipais;
 
+import br.com.improving.carrinho.CarrinhoCompras;
+import br.com.improving.carrinho.Item;
+import br.com.improving.carrinho.Produto;
 import br.utilitario.Conexao;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ import javax.swing.JComboBox;
 import br.utilitario.Data;
 import java.awt.Color;
 import java.awt.Component;
+import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -76,7 +80,13 @@ public final class JFVendas extends javax.swing.JFrame {
         modelo.setRowCount(0);
         //jTableDetalhes.setEnabled(false);
        // execProcedure();
-        
+       
+        jTableDetalhes.getColumnModel().getColumn(0).setMinWidth(40);
+        jTableDetalhes.getColumnModel().getColumn(0).setMaxWidth(40);
+        jTableDetalhes.getColumnModel().getColumn(1).setMinWidth(300);
+        jTableDetalhes.getColumnModel().getColumn(1).setMaxWidth(300);
+        jTableDetalhes.getColumnModel().getColumn(2).setMinWidth(40);
+        jTableDetalhes.getColumnModel().getColumn(2).setMaxWidth(40);
         
     }
     
@@ -459,7 +469,7 @@ public final class JFVendas extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Titulo", "Quantidade", "Valor Unitário", "Sub Total"
+                "Código", "Titulo", "Quant", "Valor Unitário", "Sub Total"
             }
         ));
         jTableDetalhes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1012,6 +1022,44 @@ public final class JFVendas extends javax.swing.JFrame {
         vTotal = Double.parseDouble(jTprecoTotal.getText());
         vCadaParcela = (vTotal / numParcelas);
         jTValorParcela.setText(String.valueOf(Math.ceil(vCadaParcela)));
+    }
+    
+    public void adicionaNaLista2(JComboBox combo)
+    {   
+        //TITULO DO LIVRO
+        String titulo = (String)combo.getSelectedItem();
+        
+        //QUANTIDADE
+        int quant = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade:",1));
+         try
+            {   
+          
+                con.executaSql("select titulo,codLivro,preco_venda from livro where titulo =  '"+titulo+"'");
+                con.getRs().next();
+                
+                //CODIGO E PREÇO VENDA(VALOR UNITARIO)
+                long codigolivro = Integer.parseInt(con.getRs().getString("codLivro"));
+               //BigDecimal preco_venda =0.01;//BigDecimal.valueOf(Double.parseDouble(con.getRs().getString("preco_venda")));
+ 
+               double preco_venda = Double.parseDouble(con.getRs().getString("preco_venda"));
+              //  assertEquals(new BigDecimal(123.42).setScale(2, BigDecimal.ROUND_HALF_UP), bigDecimal);
+               
+                Produto produto = new Produto(codigolivro, titulo);
+                Item item = new Item(produto, preco_venda, quant);
+                
+                CarrinhoCompras carrinho = new CarrinhoCompras();
+                carrinho.adicionarItem(produto, preco_venda, quant);
+                
+                System.out.println("TOTAL:"+carrinho.getValorTotal());
+                
+            }catch(Exception e)
+            {
+              javax.swing.JOptionPane.showMessageDialog(null,"erro 1"+ e);
+            }
+         
+         
+         
+        
     }
     
     public void adicionaNaLista(JComboBox combo)

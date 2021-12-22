@@ -154,36 +154,36 @@ public class JFCliente extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nome :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-        jPanel1.add(jTnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 650, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+        jPanel1.add(jTnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 520, -1));
 
         jLabel2.setText("CPF :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
 
         jLabel3.setText("Telefone : ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jLabel4.setText("Endereço :");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         jTtel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTtelKeyPressed(evt);
             }
         });
-        jPanel1.add(jTtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 650, -1));
-        jPanel1.add(jTendereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 650, -1));
+        jPanel1.add(jTtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 200, -1));
+        jPanel1.add(jTendereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 650, -1));
 
         jTcpf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTcpfKeyPressed(evt);
             }
         });
-        jPanel1.add(jTcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 160, -1));
+        jPanel1.add(jTcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 160, -1));
 
         jLabel5.setText("Todos clientes");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 20, -1, -1));
@@ -193,29 +193,29 @@ public class JFCliente extends javax.swing.JFrame {
                 jCclienteActionPerformed(evt);
             }
         });
-        jPanel1.add(jCcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 700, -1));
+        jPanel1.add(jCcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 600, -1));
 
         jLabel6.setText("Código :");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jTcodigo.setBackground(new java.awt.Color(102, 204, 255));
-        jPanel1.add(jTcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 71, -1));
+        jTcodigo.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jTcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 71, -1));
 
         jLabel7.setText("Cidade :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jTcidade.setBackground(new java.awt.Color(102, 204, 255));
-        jPanel1.add(jTcidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 70, -1));
+        jTcidade.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jTcidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 60, -1));
 
         jCcidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCcidadeActionPerformed(evt);
             }
         });
-        jPanel1.add(jCcidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 580, -1));
+        jPanel1.add(jCcidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 580, -1));
 
         jLabel8.setText("Sexo :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
 
         buttonGroup1.add(jRm);
         jRm.setSelected(true);
@@ -225,7 +225,7 @@ public class JFCliente extends javax.swing.JFrame {
                 jRmActionPerformed(evt);
             }
         });
-        jPanel1.add(jRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+        jPanel1.add(jRm, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, -1, -1));
 
         buttonGroup1.add(jRf);
         jRf.setText("F");
@@ -234,8 +234,8 @@ public class JFCliente extends javax.swing.JFrame {
                 jRfActionPerformed(evt);
             }
         });
-        jPanel1.add(jRf, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 730, 14));
+        jPanel1.add(jRf, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 730, 14));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -265,17 +265,17 @@ public class JFCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 710, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 710, 250));
 
         jLabel9.setText("Pesquisar na tabela.:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jTpesquisaTable.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTpesquisaTableKeyReleased(evt);
             }
         });
-        jPanel1.add(jTpesquisaTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 370, -1));
+        jPanel1.add(jTpesquisaTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 300, -1));
 
         jButton10.setText("Pesquisar");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +283,7 @@ public class JFCliente extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 90, -1));
+        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 120, -1));
 
         jButton11.setText("Exibir todos");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +291,7 @@ public class JFCliente extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 100, -1));
+        jPanel1.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 140, -1));
 
         jButton6.setText("<<");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -382,7 +382,7 @@ public class JFCliente extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 80, -1));
+        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 80, -1));
 
         buttonGroup2.add(jRadioButton2);
         jRadioButton2.setSelected(true);
@@ -392,11 +392,11 @@ public class JFCliente extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 110, -1));
+        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 110, -1));
 
         jLabel10.setText("Ordenação.:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, 20));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 710, 10));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, 20));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 710, 10));
 
         jMenu1.setText("Sistema");
 
@@ -928,7 +928,7 @@ public boolean verificaNome(String nome) throws Exception {
                                 hasFocus, row, column); 
                            
                             if (row%2==0) {  
-                                setBackground(Color.CYAN); 
+                                setBackground(Color.LIGHT_GRAY); 
                                 
                             }else if (row%2 == 1) {  
                                 setBackground(null); 
