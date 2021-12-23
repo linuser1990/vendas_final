@@ -712,7 +712,7 @@ public class JFVendasFeitas extends javax.swing.JFrame {
                         System.out.print(data3);
                 
                 modelo.addRow(new Object[]{con.getRs().getString("codVenda"), con.getRs().getString("nome_cliente"),
-                        con.getRs().getString("quantidade_total"),data3,con.getRs().getString("valor_recebido"),con.getRs().getString("valor_total_geral")
+                        con.getRs().getString("quantidade_total"),data3,con.getRs().getString("valor_recebido"),con.getRs().getString("valor_total")
                 });
 
 

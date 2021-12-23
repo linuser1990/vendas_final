@@ -686,13 +686,13 @@ public final class JFVendas extends javax.swing.JFrame {
             int i = JOptionPane.showConfirmDialog(null,"Deseja remover este livro da lista ?","",JOptionPane.YES_NO_CANCEL_OPTION);
             if(i==0)
             {
-                double valor=0;
+                double subtotal=0;
                 DefaultTableModel modelo = (DefaultTableModel) jTableDetalhes.getModel();
 
                 int parouaqui=0;
                 String x = String.valueOf(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 0));
                 int codigo = Integer.parseInt(x);
-                valor = Double.parseDouble(String.valueOf(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 4))); 
+                subtotal = Double.parseDouble(String.valueOf(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 4))); 
 
                 for(int a=0;a<lista.size();a++)
                 {
@@ -712,7 +712,7 @@ public final class JFVendas extends javax.swing.JFrame {
                
                //REMOVE DA LISTA QAUNTIDADE 
                quantidade.remove(quantidade.get(parouaqui));
-               total_venda-=valor;
+               total_venda=total_venda-subtotal;
                jTprecoTotal.setText(String.valueOf(total_venda));
                
                
@@ -1115,7 +1115,8 @@ public final class JFVendas extends javax.swing.JFrame {
         try
         {
             quant = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade:",1));
-            if ((quant != 0) && (quant  > 0)) {
+            if ((quant != 0) && (quant  > 0))
+            {
                         quantidade.add(quant);
                         pos=quantidade.size();
                         System.out.println("size do qtd"+pos);
@@ -1161,6 +1162,7 @@ public final class JFVendas extends javax.swing.JFrame {
                 quantidade.remove(pos-1);
             }else
             {
+               // quantidade.add(quant);
                 con.executaSql("select titulo,codLivro,preco_venda from livro where titulo =  '"+titulo+"'");
                 con.getRs().next();
                 
