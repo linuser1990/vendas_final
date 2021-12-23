@@ -45,6 +45,8 @@ public final class JFVendas extends javax.swing.JFrame {
     
     private List<Integer> posCodigo = new ArrayList<Integer>();
     
+    private int clica=0;
+    private int clicado=0;
     private int verifica_rows=0;
     private int cont=0;
     private int cont_total=0;
@@ -479,7 +481,7 @@ public final class JFVendas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableDetalhes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 630, 121));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 660, 121));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Ordenação"));
 
@@ -681,20 +683,45 @@ public final class JFVendas extends javax.swing.JFrame {
 
         try
         {
-            int i = JOptionPane.showConfirmDialog(null,"Deseja remover este livro da lista ?");
+            int i = JOptionPane.showConfirmDialog(null,"Deseja remover este livro da lista ?","",JOptionPane.YES_NO_CANCEL_OPTION);
             if(i==0)
             {
                 double valor=0;
                 DefaultTableModel modelo = (DefaultTableModel) jTableDetalhes.getModel();
 
+                int parouaqui=0;
                 String x = String.valueOf(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 0));
                 int codigo = Integer.parseInt(x);
                 valor = Double.parseDouble(String.valueOf(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 4))); 
 
+                for(int a=0;a<lista.size();a++)
+                {
+                    if(jTableDetalhes.getValueAt(jTableDetalhes.getSelectedRow(), 0).equals(String.valueOf(lista.get(a))))
+                    {
+                        System.out.println("\nACHOU " );
+                        parouaqui=a;
+                    }
+                        
+                    System.out.println("\nLISTA(CODIGO DOS LIVROS) ANTES: "+lista.get(a));
+                    System.out.println("\nQUANTIDADE ANTES: "+quantidade.get(a));
+                   //System.out.println("\nLISTA ANTES, INDEXOF: "+lista.indexOf(a));
+                   // System.out.println("\nLISTA ANTES, INDEXOF: "+lista.);
+                }
                //remove o código do livro que foi selecionado na grid
                lista.remove( lista.indexOf(codigo) );  
+               
+               //REMOVE DA LISTA QAUNTIDADE 
+               quantidade.remove(quantidade.get(parouaqui));
                total_venda-=valor;
                jTprecoTotal.setText(String.valueOf(total_venda));
+               
+               
+               
+               for(int a=0;a<lista.size();a++)
+                {
+                    System.out.println("\nLISTA (CODIGO DOS LIVROS) DEPOIS: "+lista.get(a));
+                    System.out.println("\nQUANTIDADE DEPOIS: "+quantidade.get(a));
+                }
 
                //remove a linha selecionada
                ((DefaultTableModel) jTableDetalhes.getModel()).removeRow(jTableDetalhes.getSelectedRow()); 
@@ -873,6 +900,7 @@ public final class JFVendas extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         adicionaNaLista(jCtodos);
+        
 }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1166,6 +1194,8 @@ public final class JFVendas extends javax.swing.JFrame {
                        verifica_rows=1;
                     }
                     
+                    
+                  
 
                     while(con.getRs().next())
                     {
@@ -1196,6 +1226,7 @@ public final class JFVendas extends javax.swing.JFrame {
 
 
                     }
+                    
                     con.getRs().first();
          
 
