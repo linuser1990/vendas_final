@@ -700,6 +700,7 @@ public final class JFVendas extends javax.swing.JFrame {
                     {
                         System.out.println("\nACHOU " );
                         parouaqui=a;
+                        break;
                     }
                         
                     System.out.println("\nLISTA(CODIGO DOS LIVROS) ANTES: "+lista.get(a));
